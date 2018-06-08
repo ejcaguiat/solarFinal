@@ -10,6 +10,10 @@
         <title>Home: Admin</title>
     {%elif loggeduser.accountType == 0 %}
         <title>Home: User</title>
+    
+    {% elif not user.is_authenticated %}
+        <title>UNAUTHORIZED</title>
+        <meta http-equiv="refresh" content="0; UNAUTHORIZED_ACCESS" />
     {%endif%}
 </head>
 
@@ -17,7 +21,7 @@
 	<div class="homepage-container">
         <b>Welcome, {{loggeduser.username}}</b>
 		<div class="logout-home">
-			<b><a href="/" class="logout-home-button">Log out</a></b>
+            <form action = "logout"><input type = "submit" value = "log out" class="logout-home-button"></form>
 		</div>
         <div>
                 <img src = "{% static 'media/solarpic.png' %}" class="home-logo">
