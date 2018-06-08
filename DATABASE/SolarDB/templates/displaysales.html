@@ -66,12 +66,12 @@
 				    	<th rowspan="2">Released Payment</th>
 				    	<th rowspan="2">Balance</th>
 				    	<th colspan="2">BIR</th>
-				    	<th rowspan="2">LGU</th>
+				    	<th rowspan="1">LGU</th>
 				    	<th colspan="2">ROD</th>
-				    	<th rowspan="2">Others</th>
+				    	<th rowspan="1">Others</th>
 				    	<th rowspan="2">Sum of other expenses</th>
 				    	<th rowspan="2">Taxes and other Fees</th>
-                        <th colspan="2"></th>
+                      
 				    </tr>
 				      
 				    <tr>
@@ -98,9 +98,10 @@
 				    	<th>CGT(6%)</th>
 				    	<th>DST(3%)</th>
 				    	<th>Transfer Fee(1%)</th>
+                        <th>Notorial Fee(1%)</th>
 				    	<th>LRA Fee(1%)</th>
 				    	<th>I.T Fee</th>
-				    	<th>Notorial Fee(1%)</th>
+				    	
 				    </tr>
                 </thead>
                     {% for property  in all_properties%}
@@ -145,14 +146,14 @@
                     <td> {{ property.BIRcgt}}</td>    
                     <td> {{ property.BIRdst}}</td>  
                     <td> {{ property.LGUtransfer}}</td>   
-                    <td></td>
+                    <td> {{ property.OTHERSnotorial}}</td> 
                     <td> {{ property.RODlra}}</td>  
                     
-                    <td></td>
+                  
                     <td> {{ property.SUMother}}</td>    
                     <td> {{ property.TAXother}}</td> 
                     <td> {{ property.RODit}}</td>    
-                    <td> {{ property.OTHERSnotorial}}</td> 
+                    
                 </tr>
 				 {% endfor%}
 				  				  

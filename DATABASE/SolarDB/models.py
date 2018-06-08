@@ -30,7 +30,7 @@ class salesProperty(models.Model):
     totalContractPrice = models.FloatField(default = None)
     #End of Payment Details
     
-    #Released Payments
+    #Released Pxyments
     firstPayAmount = models.FloatField(default = None)
     firstPayDate = models.CharField( max_length = 255, default = "")
     
