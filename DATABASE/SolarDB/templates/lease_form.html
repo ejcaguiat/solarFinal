@@ -1,0 +1,419 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="{% static 'css/bootstrap.min.css' %}"rel="stylesheet">
+	<link href="{% static 'css/stylecss.css' %}" rel="stylesheet" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
+    <title>Lease Properties Form</title>
+</head>
+<!------ Include the above in your HEAD tag ---------->
+
+<body>
+    {% csrf_token %}
+		<div class="topnav">
+			<a href = "/homepage"><img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
+                <p id = "underLined">← back to home</p></a>
+		</div>
+<div class="container">
+  <h1>Lease Properties</h1>
+  <form class="form-horizontal" role="form" action="#" method="POST">
+    <fieldset>
+      <legend class="form-legend">Location Details</legend>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Region</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="region" id="region" placeholder="Region">
+        </div>
+      </div>
+	  
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Province</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="province" id="province" placeholder="Province">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Municipality</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="municipality" id="municipality" placeholder="Municipality">
+        </div>
+      </div>
+      
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">Barangay</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="barangay" id="barangay" placeholder="Barangay">
+        </div>
+      </div>
+    </fieldset>
+	
+	<fieldset>
+      <legend class="form-legend">Property Owner's Details</legend>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Registered Land Owner</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="registeredlandowner" id="registeredlandowner" placeholder="Registered Land Owner">
+        </div>
+      </div>
+	  
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Representative</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="representative" id="representative" placeholder="Representative">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Address</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="address" id="address" placeholder="Address">
+        </div>
+      </div>
+      
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">Contact Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="contactnumber" id="contactnumber" placeholder="Contact Number">
+        </div>
+      </div>
+    </fieldset>
+	
+	<fieldset>
+      <legend class="form-legend">Property Details</legend>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Title Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="titlenumber" id="titlenumber" placeholder="Title Number">
+        </div>
+      </div>
+	  
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Lot Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="lotnumber" id="lotnumber" placeholder="Lot Number">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Size</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="size" id="size" placeholder="Size">
+        </div>
+      </div>
+      
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">Survey Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="surveynumber" id="surveynumber" placeholder="Survey Number">
+        </div>
+      </div>
+    </fieldset>
+	
+	<fieldset>
+      <legend class="form-legend">Payment Details</legend>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Lease Price Per Hectare</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="leasepriceperhectare" id="leasepriceperhectare" placeholder="Lease Price Per Hectare">
+        </div>
+      </div>
+	  
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Total Contract Price</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="totalcontractprice" id="totalcontractprice" placeholder="Total Contract Price">
+        </div>
+      </div>
+    </fieldset>
+	
+	<fieldset>
+      <legend class="form-legend">Released Payments</legend>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Advance Payment</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="advancepayment_amount" id="advancepayment_amount" value = 0>
+		  <input type="text" class="form-control-date" name="advancepayment_date" id="advancepayment_date" placeholder="Date Released">
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 1</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year1Pay" id="year1Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year1Date" id="year1Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 2</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year2Pay" id="year2Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year2Date" id="year2Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 3</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year3Pay" id="year3Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year3Date" id="year3Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 4</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year4Pay" id="year4Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year4Date" id="year4Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 5</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year5Pay" id="year5Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year5Date" id="year5Date" placeholder="Date Released">
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 6</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year6Pay" id="year6Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year6Date" id="year6Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 7</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year7Pay" id="year7Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year7Date" id="year7Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 8</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year8Pay" id="year8Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year8Date" id="year8Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 9</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year9Pay" id="year9Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year9Date" id="year9Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 10</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year10Pay" id="year10Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year10Date" id="year10Date" placeholder="Date Released">
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 11</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year11Pay" id="year11Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year11Date" id="year11Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 12</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year12Pay" id="year12Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year12Date" id="year12Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 13</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year13Pay" id="year13Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year13Date" id="year13Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 14</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year14Pay" id="year14Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year14Date" id="year14Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 15</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year15Pay" id="year15Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year15Date" id="year15Date" placeholder="Date Released">
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 16</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year16Pay" id="year16Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year16Date" id="year16Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 17</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year17Pay" id="year17Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year17Date" id="year7Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 18</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year18Pay" id="year18Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year18Date" id="year18Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 19</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year19Pay" id="year19Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year19Date" id="year19Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 20</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year20Pay" id="year20Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year20Date" id="year20Date" placeholder="Date Released">
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 21</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year21Pay" id="year21Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year21Date" id="year21Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 22</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year22Pay" id="year22Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year22Date" id="year22Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 23</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year23Pay" id="year23Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year23Date" id="year23Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 24</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year24Pay" id="year24Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year24Date" id="year24Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 25</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year25Pay" id="year25Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year25Date" id="year25Date" placeholder="Date Released">
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 26</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year26Pay" id="year26Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year26Date" id="year26Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 27</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year27Pay" id="year27Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year27Date" id="year27Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 28</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year28Pay" id="year28Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year28Date" id="year28Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 29</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year29Pay" id="year29Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year29Date" id="year29Date" placeholder="Date Released">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">YEAR 30</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="year30Pay" id="year30Pay" value = 0>
+		  <input type="text" class="form-control-date" name="year30Date" id="year30Date" placeholder="Date Released">
+        </div>
+      </div>
+    </fieldset>
+	
+	<fieldset>
+      <legend class="form-legend">Taxes and Registration Fees</legend>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">CGT</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="cgt_amount" id="cgt_amount" value = 0>
+        </div>
+      </div>
+	  
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">DST</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="dst_amount" id="dst_amount-5_amount" value = 0>
+        </div>
+      </div>
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">Trasnfer Fees</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="transferfees_amount" id="y6-transferfees_amount" value = 0>
+        </div>
+      </div>
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">LRA Fee</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="lrafee_amount" id="lrafee_amount-15_amount" value = 0>
+        </div>
+      </div>
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">I.T Fee</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="itfee_amount" id="y16itfee_amount20_amount" value = 0>
+        </div>
+      </div>
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">LBP</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="lbp_amount" id="y21-lbp_amount" value = 0>
+        </div>
+      </div>
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">Notarial Fee</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control-amount" name="notarialfee_amount" id="y26-notarialfee_amount" value = 0>
+        </div>
+      </div>
+	  
+      
+	  
+	  <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            {% csrf_token %}
+            <input type="hidden" name="leaseproperty" value="true" required>
+          <input type="submit" class="btn btn-success">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+</body>
+</html>

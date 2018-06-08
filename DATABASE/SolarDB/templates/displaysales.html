@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="{% static 'css/bootstrap.min.css' %}"rel="stylesheet">
+	<link href="{% static 'css/stylecss.css' %}" rel="stylesheet" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
+    <title>Sales Properties Summary</title>
+</head> 
+
+<body>
+	<div>
+        <select id="list">
+            <option value="0">Payment Status</option>
+            <option value="1">Region</option>
+            <option value="2">Province</option>
+            <option value="3">Municipality</option>
+            <option value="4">Barangay</option>
+            <option value="5">Registered Landowner</option>
+            <option value="6">Payee</option>
+            <option value="7">Address</option>
+            <option value="8">Contact Number</option>
+            <option value="9">Tilte No.</option>
+            <option value="10">Area</option>
+            <option value="11">Sale Price Per Hectare</option>
+            <option value="12">Title Contract Price</option>
+        </select> 
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+        
+            <table  id="myTable">
+                <thead>
+				    <tr>
+				    	<th rowspan="2">Payment Status (%PAID)</th>
+				    	<th rowspan="2">Region</th> 
+				    	<th rowspan="2">Province</th>
+				    	<th rowspan="2">Municipality</th>
+				    	<th rowspan="2">Barangay</th>
+				    	<th rowspan="2">Registered Landowner</th>
+				    	<th rowspan="2">Payee</th>
+				    	<th rowspan="2">Title No.</th>
+				    	<th rowspan="2">Area(hectares)</th>
+				    	<th rowspan="2">Sale Price Per Hectare</th>
+				    	<th rowspan="2">Total Contract Price</th>
+				    	<th colspan="2">1st Payment</th>
+				    	<th colspan="2">2nd Payment</th>
+				    	<th colspan="2">3rd Payment</th>
+				    	<th colspan="2">4th Payment</th>
+				    	<th colspan="2">5th Payment</th>
+				    	<th colspan="2">6th Payment</th>
+				    	<th colspan="2">7th Payment</th>
+				    	<th colspan="2">8th Payment</th>
+				    	<th colspan="2">9th Payment</th>
+				    	<th colspan="2">10th Payment</th>
+				    	<th rowspan="2">Released Payment</th>
+				    	<th rowspan="2">Balance</th>
+				    	<th colspan="2">BIR</th>
+				    	<th rowspan="2">LGU</th>
+				    	<th colspan="2">ROD</th>
+				    	<th rowspan="2">Others</th>
+				    	<th rowspan="2">Sum of other expenses</th>
+				    	<th rowspan="2">Taxes and other Fees</th>
+				    </tr>
+				      
+				    <tr>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>Amount</th>
+				    	<th>Date Released</th>
+				    	<th>CGT(6%)</th>
+				    	<th>DST(3%)</th>
+				    	<th>Transfer Fee(1%)</th>
+				    	<th>LRA Fee(1%)</th>
+				    	<th>I.T Fee</th>
+				    	<th>Notorial Fee(1%)</th>
+				    </tr>
+                </thead>
+                    {% for property  in all_properties%}
+                <tr id="tr-hover">
+				    <td> </td>
+					<td> {{ property.region}}</td>
+                    <td> {{ property.province}}</td>
+                    <td> {{ property.municipality}}</td>
+                    <td> {{ property.barangay}}</td>
+                    <td> {{ property.regLandOwner}}</td>   
+                    <td> {{ property.Payee}}</td>
+                    <td> {{ property.titleNum}}</td> 
+                    <td> {{ property.areaHectares}}</td>
+                    <td> {{ property.pricePerHectare}}</td>
+                    <td> </td>  
+                    <td> {{ property.firstPayAmount}}</td>
+                    <td> {{ property.firstPayDate}}</td>
+                    <td> {{ property.secPayAmount}}</td>
+                    <td> {{ property.secPayDate}}</td>
+                    <td> {{ property.thirdPayAmount}}</td>
+                    <td> {{ property.thirdPayDate}}</td>
+                    <td> {{ property.fourthPayAmount}}</td>
+                    <td> {{ property.fourthPayDate}}</td>
+                    <td> {{ property.fifthPayAmount}}</td>
+                    <td> {{ property.fifthPayDate}}</td>
+                         
+                    <td> {{ property.sixthPayAmount}}</td>
+                    <td> {{ property.sixthPayDate}}</td>
+                    <td> {{ property.seventhPayAmount}}</td>
+                    <td> {{ property.seventhPayDate}}</td>
+    
+                    <td> {{ property.eigthPayAmount}}</td>
+                    <td> {{ property.eigthPayDate}}</td>
+                    <td> {{ property.ninthPayAmount}}</td>
+                    <td> {{ property.ninthPayDate}}</td>
+                    <td> {{ property.tenthPayAmount}}</td>
+                    <td> {{ property.tenthPayDate}}</td>    
+                         
+                    <td> {{ property.releasedPayment}}</td>    
+                    <td> {{ property.balance}}</td>    
+                    
+                    <td> {{ property.BIRcgt}}</td>    
+                    <td> {{ property.BIRdst}}</td>  
+                    <td> {{ property.LGUtransfer}}</td>    
+                    <td> {{ property.RODlra}}</td>  
+                    <td></td>
+                    <td></td>
+                    <td> {{ property.SUMother}}</td>    
+                    <td> {{ property.TAXother}}</td> 
+                    <td> {{ property.RODit}}</td>    
+                    <td> {{ property.OTHERSnotorial}}</td> 
+                </tr>
+				 {% endfor%}
+				  				  
+            </table>
+        </div>
+</body>
+
+       
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, dropdown;
+        dropdown = document.getElementById("list").value;
+        
+        
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[dropdown];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }       
+        }
+    }
+</script>
+</html>
