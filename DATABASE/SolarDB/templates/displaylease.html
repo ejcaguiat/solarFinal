@@ -12,22 +12,29 @@
     
 <body>
 <div>
-   <select id="list">
-       <option value="0">Region</option>
-       <option value="1">Province</option>
-       <option value="2">Municipality</option>
-       <option value="3">Barangay</option>
-       <option value="4">Registered Landowner</option>
-       <option value="5">Payee</option>
-       <option value="6">Address</option>
-       <option value="7">Contact Number</option>
-       <option value="8">Tilte No.</option>
-       <option value="9">Tax Declaration</option>
-       <option value="10">Lot No./Survey No.</option>
-       <option value="11">Area</option>
-   </select>    
-   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+   <div class="topnav-display">
+            <div class="topnav-back">
+                <a href = "/homepage"><img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
+                <p id = "underLined">← back to home</p></a>
+            </div>
             
+            <select>
+                <option value="0">Payment Status</option>
+                <option value="1">Region</option>
+                <option value="2">Province</option>
+                <option value="3">Municipality</option>
+                <option value="4">Barangay</option>
+                <option value="5">Registered Landowner</option>
+                <option value="6">Payee</option>
+                <option value="7">Address</option>
+                <option value="8">Contact Number</option>
+                <option value="9">Tilte No.</option>
+                <option value="10">Area</option>
+                <option value="11">Sale Price Per Hectare</option>
+                <option value="12">Title Contract Price</option>
+            </select> 
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+        </div>         
             <table id="myTable">
                 <thead>
                     <tr>
@@ -45,6 +52,7 @@
                         <th rowspan="3">Total Lease Year 21-25</th>
                         <th colspan="11">Year 26-30</th> 
                         <th rowspan="3">Total Lease Year 26-30</th>
+                        <th colspan="8"></th>
                     </tr>
                     <tr>
 					    <th rowspan="2">Region</th> 
@@ -63,7 +71,7 @@
 					    <th rowspan="2"># of years</th>
 					    
 					    <th colspan="2">Advance Payment Released</th>
-					    <th rowspan="2">Lease Amount Per year</th>
+					    <th rowspan="2">Lease Amount Per Year</th>
 					    <th colspan="2">Year 1</th>
 					    <th colspan="2">Year 2</th>
 					    <th colspan="2">Year 3</th>
@@ -205,7 +213,6 @@
                         <td> </td>
                         <td> </td>
                         <td> </td>
-                        <td>  {{ property.dateRelease}}</td>
                         <td> </td>
                         <td> </td>
                         <td> </td>
@@ -279,7 +286,8 @@
                         <td> </td>
                         <td> </td>
                         <td> </td>
-                        <td>  {{ property.balance}}</td>
+                        <td> </td>
+                        <td> </td>
                         <td>{{ property.BIRcgt}} </td>
                         <td>{{ property.BIRdst}}  </td>
                         <td>{{ property.LGUtransfer}}  </td>

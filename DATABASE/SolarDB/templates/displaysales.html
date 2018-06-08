@@ -11,22 +11,29 @@
 
 <body>
 	<div>
-        <select id="list">
-            <option value="0">Payment Status</option>
-            <option value="1">Region</option>
-            <option value="2">Province</option>
-            <option value="3">Municipality</option>
-            <option value="4">Barangay</option>
-            <option value="5">Registered Landowner</option>
-            <option value="6">Payee</option>
-            <option value="7">Address</option>
-            <option value="8">Contact Number</option>
-            <option value="9">Tilte No.</option>
-            <option value="10">Area</option>
-            <option value="11">Sale Price Per Hectare</option>
-            <option value="12">Title Contract Price</option>
-        </select> 
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+        <div class="topnav-display">
+            <div class="topnav-back">
+                <a href = "/homepage"><img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
+                <p id = "underLined">← back to home</p></a>
+            </div>
+            
+            <select>
+                <option value="0">Payment Status</option>
+                <option value="1">Region</option>
+                <option value="2">Province</option>
+                <option value="3">Municipality</option>
+                <option value="4">Barangay</option>
+                <option value="5">Registered Landowner</option>
+                <option value="6">Payee</option>
+                <option value="7">Address</option>
+                <option value="8">Contact Number</option>
+                <option value="9">Tilte No.</option>
+                <option value="10">Area</option>
+                <option value="11">Sale Price Per Hectare</option>
+                <option value="12">Title Contract Price</option>
+            </select> 
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+        </div>
         
             <table  id="myTable">
                 <thead>
@@ -60,6 +67,7 @@
 				    	<th rowspan="2">Others</th>
 				    	<th rowspan="2">Sum of other expenses</th>
 				    	<th rowspan="2">Taxes and other Fees</th>
+                        <th colspan="2"></th>
 				    </tr>
 				      
 				    <tr>
