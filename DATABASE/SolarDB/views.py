@@ -305,4 +305,6 @@ def logout(request):
 
     return render(request, 'login.html')
 
+def ERROR(request):
+    return render(request, 'ERROR.html')
 

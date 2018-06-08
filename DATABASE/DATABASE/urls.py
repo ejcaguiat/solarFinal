@@ -15,5 +15,6 @@ urlpatterns = [
     path('homepage/leaseedit/', views.leaseedit, name = 'leaseeditpage'),
     path('homepage/salesedit/', views.salesedit, name = 'saleseditpage'),
     path('homepage/logout/', views.logout, name = 'logout'),
+    path('homepage/UNAUTHORIZED_ACCESS/', views.ERROR, name = 'ERROR')
     
 ]
