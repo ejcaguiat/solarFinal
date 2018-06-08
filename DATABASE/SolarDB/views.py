@@ -217,7 +217,7 @@ def salesregister(request):
                                            , surveyNum=request.POST['surveynumber']
                                            
                                            ,pricePerHectare=request.POST['leasepriceperhectare']
-                                           
+                                           ,areaHectares=request.POST['size']
                                            , firstPayAmount=request.POST['1stpayment_amount']
                                            , firstPayDate=request.POST['1stpayment_date']
                                            
