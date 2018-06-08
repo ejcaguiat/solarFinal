@@ -11,8 +11,14 @@
       <div class="hero-unit center">
           <h1>Error <small><font face="Tahoma" color="red">unauthorized access</font></small></h1>
           <br />
-          <p>The page you requested needs an active user to be viewed. Please login or register to continue</p>
-          <a href="/" class="btn btn-large btn-info"><i class="icon-home icon-white"></i> Go back to Homepage</a>
+          {% if not user.is_authenticated %}
+            <p>The page you requested needs an active user to be viewed. Please login or register to continue</p>
+            <a href="/" class="btn btn-large btn-info"><i class="icon-home icon-white"></i>Go back to Login Page</a>
+          {% elif loggeduser.accountType == 0 %}
+            <p>You must have admin privileges to view this page.</p>
+            <a href="/homepage" class="btn btn-large btn-info"><i class="icon-home icon-white"></i>Go back to Homepage</a>
+          {% endif %}
+          
         </div>
         <br />
   </div>

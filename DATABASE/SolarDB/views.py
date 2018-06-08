@@ -17,7 +17,7 @@ def index(request):
                 user = User.objects.get(username=request.POST['username'], password=request.POST['password'])
 
                 request.session['user'] = user.pk
-                #request.session['type'] = user.get_type()
+                #request.session['accountType'] = user.get_type()
                 return HttpResponseRedirect('homepage')
 
             except User.DoesNotExist:
@@ -36,19 +36,6 @@ def index(request):
                 
     return render(request, 'login.html', context)
 
-
-def register(request):
-    context = {}
-    if 'register' in request.POST:
-            try:
-                user = User.objects.get(username=request.POST['username'])
-                context['reg_error'] = 'That username is already taken.'
-            except User.DoesNotExist:
-                user = User(username=request.POST['username'], password=request.POST['password']
-                           )
-                user.save()
-                context['reg_success'] = "Account has been created."
-    return render(request, 'register.html', context)
 
 def homepage(request):
     try:
@@ -202,8 +189,14 @@ def leaseregister(request):
     return render(request, 'lease_form.html')
 
 def salesregister(request):
+    try:
+        loggeduser = User.objects.get(id=request.session['user'])
+    except(KeyError, User.DoesNotExist):
+        loggeduser = 0
+    context = {
+        'loggeduser':loggeduser,
+    }
     
-    context = {}
     if 'addproperty' in request.POST:
                 property =salesProperty(region=request.POST['region']
                                             , province=request.POST['province']
@@ -282,7 +275,7 @@ def salesregister(request):
                 
                            )
                 property.save()
-                return render(request, 'sales_form.html')
+                return render(request, 'sales_form.html', context)
        
     return render(request, 'sales_form.html')
 
