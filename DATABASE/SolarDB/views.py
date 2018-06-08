@@ -96,7 +96,11 @@ def leaseregister(request):
                                            , titleNum=request.POST['titlenumber']
                                            , lotNum=request.POST['lotnumber']
                                         
-                                           
+                                           ,taxDec=request.POST['taxdeclaration']
+                                ,leaseamountperyear=request.POST['leaseamountperyear']
+                                ,advPaymentDate=request.POST['advancepayment_date']
+                                ,advPayment=request.POST['advancepayment_amount']
+                                
                                             ,pricePerHectare=request.POST['leasepriceperhectare']
                                             
                                 , year1Pay=request.POST['year1Pay']
@@ -180,13 +184,15 @@ def leaseregister(request):
                                            
                                            , RODit=request.POST['itfee_amount']
                                             , OTHERSnotorial=request.POST['notarialfee_amount']
-                                        ,numofyear=0
+                                        ,numofyear=request.POST['numberofyears']
                                         ,totalContractPrice= 0000
-                                        ,dateRelease= "1111-11-11"
-                                        , area= 0000
+                                        
+                                        , area =request.POST['size']
+                                , balance=request.POST['balance']
+                                #not used
                                         , SUMother =0000
                                 , TAXother =0000
-                                , balance= 0000
+                                ,dateRelease= "1111-11-11"
 
     
                            )
