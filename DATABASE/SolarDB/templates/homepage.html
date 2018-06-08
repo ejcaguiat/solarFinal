@@ -19,24 +19,35 @@
 		<div class="logout-home">
 			<b><a href="/" class="logout-home-button">Log out</a></b>
 		</div>
-			<img src = "{% static 'media/solarpic.png' %}" class="home-logo">
-			<form action="salesview">
-				<input type="submit" value="Display Sales Properties" class="btn btn-primary btn-lg"/>
-			</form>
-			<form action="leaseview">
-				<input type="submit" value="Display Lease Properties" class="btn btn-primary btn-lg"/>
-			</form>
-            {% if loggeduser.accountType == 1 %}
-            <form action="salesform">
-			     <input type="submit" value="Add Sales Properties" class="btn btn-primary btn-lg"/>
-		    </form>
-        
-            <form action="leaseregister">
-			     <input type="submit" value="Add Lease Properties" class="btn btn-primary btn-lg"/>
-		    </form>
-            {% elif loggeduser.accountType == 0 %}
-        
-            {%endif%}
+        <div>
+                <img src = "{% static 'media/solarpic.png' %}" class="home-logo">
+                <form action="salesview">
+                    <input type="submit" value="Display Sales Properties" class="btn btn-primary btn-lg"/>
+                </form>
+                <br>
+                <form action="leaseview">
+                    <input type="submit" value="Display Lease Properties" class="btn btn-primary btn-lg"/>
+                </form>
+                {% if loggeduser.accountType == 1 %}
+                <form action="salesform" style = "float: right">
+                     <input type="submit" value="Add Sales" class="btn btn-primary btn-lg"/>
+                </form>
+
+                <form action="leaseregister" style = "float: left">
+                     <input type="submit" value="Add Lease" class="btn btn-primary btn-lg"/>
+                </form>
+                <br><br><br>
+                <form action = "salesedit" style = "float: right">
+                    <input type = "submit" value = "Edit Sales" class = "btn btn-primary btn-lg"/>
+                </form>
+
+                <form action = "leaseedit" style = "float : left">
+                    <input type = "submit" value = "Edit Lease" class = "btn btn-primary btn-lg"/>
+                </form>
+                {% elif loggeduser.accountType == 0 %}
+
+                {%endif%}
+        </div>
 	</div>
 </body>
 </html> 
