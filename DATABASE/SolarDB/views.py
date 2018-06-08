@@ -261,21 +261,22 @@ def salesregister(request):
                                            
                                            , BIRdst=request.POST['dst_amount']
                                            
-                                           
                                            , LGUtransfer=request.POST['transferfees_amount']
-                                           
+                                          
                                            
                                            , RODlra=request.POST['lrafee_amount']
                                            
                                            
                                            , RODit=request.POST['itfee_amount']
                                             , OTHERSnotorial=request.POST['notarialfee_amount']
-                                           ,totalContractPrice= 0000
+                                           ,totalContractPrice= request.POST['totalcontractprice']
+                                         , area =request.POST['size']
+                                        #wala pa
                                             , releasedPayment =0000
                                         , balance =0000
                                         , SUMother =0000
                                         , TAXother =0000
-                                        , area =0000
+                                       
                                            
                                            
                 
@@ -298,6 +299,9 @@ def salesedit(request):
             'all_properties':all_properties,
     }
     return render(request, 'editsales-admin.html', context)
+
+
+
 
 def logout(request):
     if 'user' in request.session:
