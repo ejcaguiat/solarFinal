@@ -180,6 +180,7 @@ def leaseregister(request):
                                            
                                            , RODit=request.POST['itfee_amount']
                                             , OTHERSnotorial=request.POST['notarialfee_amount']
+                                        ,numofyear=0
                                         ,totalContractPrice= 0000
                                         ,dateRelease= "1111-11-11"
                                         , area= 0000
