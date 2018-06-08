@@ -85,7 +85,8 @@ class salesProperty(models.Model):
     
     
 class leaseProperty(models.Model):
-    #missing  balance
+    #missing   NUMBER OF YEARS FOR ADVANCE PAYMENT
+    #representative WALA DAPAT
     
     #Location Details
     region = models.CharField(max_length = 255, default = "")
@@ -104,8 +105,30 @@ class leaseProperty(models.Model):
      #Payment Details
     pricePerHectare = models.FloatField(default = None)
     totalContractPrice = models.FloatField(default = None)
+    numofyeard = models.FloatField(default = None)
     #End of Payment Details
     
+    
+    #Taxes and Registration Fees
+    BIRcgt = models.FloatField(default=None)
+    BIRdst = models.FloatField(default=None)
+    LGUtransfer = models.FloatField(default=None)
+    RODlra = models.FloatField(default=None)
+    RODit = models.FloatField(default=None)
+    OTHERSnotorial = models.FloatField(default=None)
+    SUMother = models.FloatField(default=None)
+    TAXother = models.FloatField(default=None)
+    #End of Taxes and Registration Fees
+    
+    Payee = models.CharField(max_length = 255, default = "")
+    area = models.FloatField(default = None)
+    taxDec = models.CharField(max_length = 255,   default = "")
+    dateRelease = models.DateField(default=None)
+    balance = models.FloatField(default = None)
+    
+    #Property Details
+    titleNum = models.CharField(max_length = 255, default = "")
+    lotNum = models.CharField(max_length = 255, default = "")
     #Released Payments
     
     advPayment = models.FloatField(default = 0)
@@ -201,26 +224,7 @@ class leaseProperty(models.Model):
     year30Date = models.CharField(max_length = 255,   default = "")
     
     
-    #Taxes and Registration Fees
-    BIRcgt = models.FloatField(default=None)
-    BIRdst = models.FloatField(default=None)
-    LGUtransfer = models.FloatField(default=None)
-    RODlra = models.FloatField(default=None)
-    RODit = models.FloatField(default=None)
-    OTHERSnotorial = models.FloatField(default=None)
-    SUMother = models.FloatField(default=None)
-    TAXother = models.FloatField(default=None)
-    #End of Taxes and Registration Fees
     
-    Payee = models.CharField(max_length = 255, default = "")
-    area = models.FloatField(default = None)
-    taxDec = models.CharField(max_length = 255,   default = "")
-    dateRelease = models.DateField(default=None)
-    balance = models.FloatField(default = None)
-    
-    #Property Details
-    titleNum = models.CharField(max_length = 255, default = "")
-    lotNum = models.CharField(max_length = 255, default = "")
     
     
 class User(models.Model):
