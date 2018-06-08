@@ -12,5 +12,7 @@ urlpatterns = [
     path('homepage/salesview/', views.salesview, name='salesviewpage'),
     path('homepage/leaseview/', views.leaseview, name='leaseviewpage'),
     path('homepage/leaseregister/', views.leaseregister, name='leaseregisterpage'),
+    path('homepage/leaseedit/', views.leaseedit, name = 'leaseeditpage'),
+    path('homepage/salesedit/', views.salesedit, name = 'saleseditpage'),
     
 ]

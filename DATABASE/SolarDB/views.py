@@ -279,4 +279,10 @@ def salesregister(request):
        
     return render(request, 'sales_form.html')
 
+def leaseedit(request):
+    return render(request, 'editlease-admin.html')
+
+def salesedit(request):
+    return render(request, 'editsales-admin.html')
+
 
