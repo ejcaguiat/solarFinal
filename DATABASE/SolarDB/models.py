@@ -130,9 +130,9 @@ class leaseProperty(models.Model):
     titleNum = models.CharField(max_length = 255, default = "")
     lotNum = models.CharField(max_length = 255, default = "")
     #Released Payments
-    
+    leaseamountperyear= models.FloatField(default = 0)
     advPayment = models.FloatField(default = 0)
-
+    advPaymentDate = models.FloatField(default = 0)
     year1Pay = models.FloatField(default = 0)
     year1Date = models.CharField(max_length = 255,   default = "")
     
