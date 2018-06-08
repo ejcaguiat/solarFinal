@@ -105,7 +105,7 @@ class leaseProperty(models.Model):
      #Payment Details
     pricePerHectare = models.FloatField(default = None)
     totalContractPrice = models.FloatField(default = None)
-    numofyeard = models.FloatField(default = None)
+    numofyear = models.FloatField(default = None)
     #End of Payment Details
     
     
