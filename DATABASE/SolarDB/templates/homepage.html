@@ -28,7 +28,11 @@
                 <form action="leaseview">
                     <input type="submit" value="Display Lease Properties" class="btn btn-primary btn-lg"/>
                 </form>
+               <br>
                 {% if loggeduser.accountType == 1 %}
+                <table>
+                
+                    <tr>
                 <form action="salesform" style = "float: right">
                      <input type="submit" value="Add Sales" class="btn btn-primary btn-lg"/>
                 </form>
@@ -36,7 +40,10 @@
                 <form action="leaseregister" style = "float: left">
                      <input type="submit" value="Add Lease" class="btn btn-primary btn-lg"/>
                 </form>
-                <br><br><br>
+                    </tr>          
+                <br>
+                    <br>
+                  <tr>  
                 <form action = "salesedit" style = "float: right">
                     <input type = "submit" value = "Edit Sales" class = "btn btn-primary btn-lg"/>
                 </form>
@@ -44,7 +51,10 @@
                 <form action = "leaseedit" style = "float : left">
                     <input type = "submit" value = "Edit Lease" class = "btn btn-primary btn-lg"/>
                 </form>
+                    </tr>    
+                </table>
                 {% elif loggeduser.accountType == 0 %}
+                
 
                 {%endif%}
         </div>
