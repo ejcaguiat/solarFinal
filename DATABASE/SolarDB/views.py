@@ -293,4 +293,10 @@ def salesedit(request):
     }
     return render(request, 'editsales-admin.html', context)
 
+def logout(request):
+    if 'user' in request.session:
+        del request.session['user']
+
+    return render(request, 'login.html')
+
 

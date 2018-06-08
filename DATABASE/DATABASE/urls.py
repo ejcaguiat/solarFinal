@@ -14,5 +14,6 @@ urlpatterns = [
     path('homepage/leaseregister/', views.leaseregister, name='leaseregisterpage'),
     path('homepage/leaseedit/', views.leaseedit, name = 'leaseeditpage'),
     path('homepage/salesedit/', views.salesedit, name = 'saleseditpage'),
+    path('homepage/logout/', views.logout, name = 'logout'),
     
 ]
