@@ -6,7 +6,11 @@
 	<link href="{% static 'css/stylecss.css' %}" rel="stylesheet" >
     <link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home: Admin</title>
+    {%if loggeduser.accountType == 1 %}
+        <title>Home: Admin</title>
+    {%elif loggeduser.accountType == 0 %}
+        <title>Home: User</title>
+    {%endif%}
 </head>
 
 <body class="home-main">
