@@ -103,8 +103,8 @@
                     {% for property  in all_properties%}
                 <tr id="tr-hover">
                     <td> 
-                        <a href = "#"><img src="{% static 'media/edit.png' %}" id="edit-delete"></a> <!--- HREF to sales forms with values --->
-                        <a href = "#"><img src="{% static 'media/delete.png' %}" id="edit-delete"></a> <!--- reload page with updated data --->
+                        <a href = "#"><img src="{% static 'media/edit.png' %}" id="edit-delete" style = "height: 20px; width: 20px;"></a> <!--- HREF to sales forms with values --->
+                        <a href = "#"><img src="{% static 'media/delete.png' %}" id="edit-delete" style = "height: 20px; width: 20px;"></a> <!--- reload page with updated data --->
                     </td>
                     <td> </td>
 					<td> {{ property.region}}</td>

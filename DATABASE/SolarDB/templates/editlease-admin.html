@@ -196,113 +196,113 @@
 				    </tr>
                 </thead>
                 <tbody>
-                    {% for property  in all_properties%}
+                    {% for property  in all_properties %}
         
-                    <tr id="tr-hover">
-                        <td> 
-                            <a href = "#"><img src="{% static 'media/edit.png' %}" id="edit-delete"></a> <!--- HREF to lease forms with values --->
-                            <a href = "#"><img src="{% static 'media/delete.png' %}" id="edit-delete"></a> <!--- HREF to lease forms with values --->
-                        </td>
-				        <td> {{ property.region}}</td>
-                        <td> {{ property.province}}</td>
-                        <td> {{ property.municipality}}</td>
-                        <td> {{ property.barangay}}</td>
-                        <td> {{ property.regLandOwner}}</td>   
-                        <td> {{ property.Payee}}</td>
-                        <td> {{ property.contactNum}}</td>    
-					    <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> {{ property.pricePerHectare}}</td>    
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td>{{ property.BIRcgt}} </td>
-                        <td>{{ property.BIRdst}}  </td>
-                        <td>{{ property.LGUtransfer}}  </td>
-                        <td>{{ property.RODlra}} </td>
-                        <td>{{ property.RODit}}  </td>
-                        <td>{{ property.OTHERSnotorial}} </td>
-                      </tr>
-                </tbody>
-                
-                    {% endfor%}
+                        <tr id="tr-hover">
+                            <td> 
+                                <a href = "#"><img src="{% static 'media/edit.png' %}" id="edit-delete" style = "height: 20px; width: 20px;"></a> <!--- HREF to lease forms with values --->
+                                <a href = "#"><img src="{% static 'media/delete.png' %}" id="edit-delete" style = "height: 20px; width: 20px;"></a> <!--- HREF to lease forms with values --->
+                            </td>
+                            <td> {{ property.region}}</td>
+                            <td> {{ property.province}}</td>
+                            <td> {{ property.municipality}}</td>
+                            <td> {{ property.barangay}}</td>
+                            <td> {{ property.regLandOwner}}</td>   
+                            <td> {{ property.Payee}}</td>
+                            <td> {{ property.contactNum}}</td>    
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> {{ property.pricePerHectare}}</td>    
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td>{{ property.BIRcgt}} </td>
+                            <td>{{ property.BIRdst}}  </td>
+                            <td>{{ property.LGUtransfer}}  </td>
+                            <td>{{ property.RODlra}} </td>
+                            <td>{{ property.RODit}}  </td>
+                            <td>{{ property.OTHERSnotorial}} </td>
+                          </tr>
+                    </tbody>
+
+                {% endfor%}
             </table>
             
     </div>

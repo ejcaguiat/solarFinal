@@ -280,9 +280,17 @@ def salesregister(request):
     return render(request, 'sales_form.html')
 
 def leaseedit(request):
-    return render(request, 'editlease-admin.html')
+    all_properties =leaseProperty.objects.all()
+    context = {
+            'all_properties':all_properties,
+    }
+    return render(request, 'editlease-admin.html', context)
 
 def salesedit(request):
-    return render(request, 'editsales-admin.html')
+    all_properties =salesProperty.objects.all()
+    context = {
+            'all_properties':all_properties,
+    }
+    return render(request, 'editsales-admin.html', context)
 
 
