@@ -260,16 +260,20 @@ def salesregister(request):
                                             , OTHERSnotorial=request.POST['notarialfee_amount']
                                            ,totalContractPrice= request.POST['totalcontractprice']
                                          , area =request.POST['size']
-                                            ,releasedPayment=request.POST['1stpayment_amount']+request.POST['2ndpayment_amount']+request.POST['3rdpayment_amount']+request.POST['4thpayment_amount']+
-                                            request.POST['5thpayment_amount']+request.POST['6thpayment_amount']+request.POST['7thpayment_amount']+request.POST['8thpayment_amount']
-                                            +request.POST['9thpayment_amount']+request.POST['10thpayment_amount']
+                                            ,releasedPayment=float(request.POST['1stpayment_amount'])+float(request.POST['2ndpayment_amount'])+float(request.POST['3rdpayment_amount'])+float(request.POST['4thpayment_amount'])+
+                                            float(request.POST['5thpayment_amount'])+float(request.POST['6thpayment_amount'])+float(request.POST['7thpayment_amount'])+float(request.POST['8thpayment_amount'])
+                                            +float(request.POST['9thpayment_amount'])+float(request.POST['10thpayment_amount'])
                                             
-                                        , balance =float(request.POST['totalcontractprice'])-(request.POST['1stpayment_amount']+request.POST['2ndpayment_amount']+request.POST['3rdpayment_amount']+request.POST['4thpayment_amount']+
-                                            request.POST['5thpayment_amount']+request.POST['6thpayment_amount']+request.POST['7thpayment_amount']+request.POST['8thpayment_amount']
-                                            +request.POST['9thpayment_amount']+request.POST['10thpayment_amount'])
+                                        , balance =float(request.POST['totalcontractprice'])-(float(request.POST['1stpayment_amount'])+float(request.POST['2ndpayment_amount'])+float(request.POST['3rdpayment_amount'])+float(request.POST['4thpayment_amount'])+
+                                            float(request.POST['5thpayment_amount'])+float(request.POST['6thpayment_amount'])+float(request.POST['7thpayment_amount'])+float(request.POST['8thpayment_amount'])
+                                            +float(request.POST['9thpayment_amount'])+float(request.POST['10thpayment_amount']))
                                             
-                                        ,SUMother=request.POST['cgt_amount']+request.POST['dst_amount']+request.POST['transferfees_amount']+request.POST['lrafee_amount']+request.POST['itfee_amount']+request.POST['notarialfee_amount']
-                                        ,TAXother=  balance-SUMother
+                                        ,SUMother= float(request.POST['cgt_amount'])+ float(request.POST['dst_amount'])+ float(request.POST['transferfees_amount'])+ float(request.POST['lrafee_amount'])+ float(request.POST['itfee_amount'])+ float(request.POST['notarialfee_amount'])
+                                        
+                                        ,TAXother=(float(request.POST['totalcontractprice'])-(float(request.POST['1stpayment_amount'])+float(request.POST['2ndpayment_amount'])+float(request.POST['3rdpayment_amount'])+float(request.POST['4thpayment_amount'])+  float(request.POST['5thpayment_amount'])+float(request.POST['6thpayment_amount'])+float(request.POST['7thpayment_amount'])+float(request.POST['8thpayment_amount'])+float(request.POST['9thpayment_amount'])+float(request.POST['10thpayment_amount']))) - 
+                                        
+                                        (float(request.POST['cgt_amount'])+ float(request.POST['dst_amount'])+ float(request.POST['transferfees_amount'])+ float(request.POST['lrafee_amount'])+ float(request.POST['itfee_amount'])+ float(request.POST['notarialfee_amount']))
+                                        
                                        
                                            
                                            
