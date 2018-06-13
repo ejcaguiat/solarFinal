@@ -75,7 +75,7 @@ def leaseregister(request):
                                             , barangay=request.POST['barangay']
                                            
                                             ,regLandOwner=request.POST['registeredlandowner']
-                                            , representative=request.POST['representative']
+                                            , Payee=request.POST['payee']
                                            
                                            , Address=request.POST['address']
                                            , contactNum=request.POST['contactnumber']
@@ -172,10 +172,10 @@ def leaseregister(request):
                                            , RODit=request.POST['itfee_amount']
                                             , OTHERSnotorial=request.POST['notarialfee_amount']
                                         ,numofyear=request.POST['numberofyears']
-                                        ,totalContractPrice= 0000
+                                       
                                         
-                                        , area =request.POST['size']
-                                , balance=request.POST['balance']
+                                        , area =request.POST['area']
+                                
                                 #not used
                                         , SUMother =0000
                                 , TAXother =0000
