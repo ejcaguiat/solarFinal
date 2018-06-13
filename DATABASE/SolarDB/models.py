@@ -104,7 +104,7 @@ class leaseProperty(models.Model):
      #Payment Details
     pricePerHectare = models.FloatField(default = None)
     
-    numofyear = models.FloatField(default = None)
+    numofyear = models.CharField(max_length = 255, default = "")
     #End of Payment Details
     
     
@@ -115,14 +115,12 @@ class leaseProperty(models.Model):
     RODlra = models.FloatField(default=None)
     RODit = models.FloatField(default=None)
     OTHERSnotorial = models.FloatField(default=None)
-    SUMother = models.FloatField(default=None)
-    TAXother = models.FloatField(default=None)
     #End of Taxes and Registration Fees
     
     Payee = models.CharField(max_length = 255, default = "")
     area = models.FloatField(default = None)
     taxDec = models.CharField(max_length = 255,   default = "")
-    dateRelease = models.DateField(default=None)
+    
     balance = models.FloatField(default = None)
     
     #Property Details
@@ -131,7 +129,7 @@ class leaseProperty(models.Model):
     #Released Payments
     leaseamountperyear= models.FloatField(default = 0)
     advPayment = models.FloatField(default = 0)
-    advPaymentDate = models.FloatField(default = 0)
+    advPaymentDate = models.CharField(max_length = 255, default = "")
     year1Pay = models.FloatField(default = 0)
     year1Date = models.CharField(max_length = 255,   default = "")
     
@@ -222,7 +220,13 @@ class leaseProperty(models.Model):
     year30Pay = models.FloatField(default = 0)
     year30Date = models.CharField(max_length = 255,   default = "")
     
-    
+    year5sum= models.FloatField(default = 0)
+    year10sum= models.FloatField(default = 0)
+    year15sum= models.FloatField(default = 0)
+    year20sum= models.FloatField(default = 0)
+    year25sum= models.FloatField(default = 0)
+    year30sum= models.FloatField(default = 0)
+    yeartotal= models.FloatField(default = 0)
     
     
     
