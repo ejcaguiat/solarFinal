@@ -205,16 +205,12 @@ def salesregister(request):
                                             , barangay=request.POST['barangay']
                                            
                                             ,regLandOwner=request.POST['registeredlandowner']
-                                            , representative=request.POST['representative']
+                                            , Payee=request.POST['payee']
                                            
-                                           , Address=request.POST['address']
-                                           , contactNum=request.POST['contactnumber']
+                                          
+                                          
                                            
                                            , titleNum=request.POST['titlenumber']
-                                           , lotNum=request.POST['lotnumber']
-                                           
-                                           
-                                           , surveyNum=request.POST['surveynumber']
                                            
                                            ,pricePerHectare=request.POST['leasepriceperhectare']
                                            ,areaHectares=request.POST['size']
@@ -264,11 +260,16 @@ def salesregister(request):
                                             , OTHERSnotorial=request.POST['notarialfee_amount']
                                            ,totalContractPrice= request.POST['totalcontractprice']
                                          , area =request.POST['size']
-                                        #wala pa
-                                            , releasedPayment =0000
-                                        , balance =0000
-                                        , SUMother =0000
-                                        , TAXother =0000
+                                            ,releasedPayment=request.POST['1stpayment_amount']+request.POST['2ndpayment_amount']+request.POST['3rdpayment_amount']+request.POST['4thpayment_amount']+
+                                            request.POST['5thpayment_amount']+request.POST['6thpayment_amount']+request.POST['7thpayment_amount']+request.POST['8thpayment_amount']
+                                            +request.POST['9thpayment_amount']+request.POST['10thpayment_amount']
+                                            
+                                        , balance =float(request.POST['totalcontractprice'])-(request.POST['1stpayment_amount']+request.POST['2ndpayment_amount']+request.POST['3rdpayment_amount']+request.POST['4thpayment_amount']+
+                                            request.POST['5thpayment_amount']+request.POST['6thpayment_amount']+request.POST['7thpayment_amount']+request.POST['8thpayment_amount']
+                                            +request.POST['9thpayment_amount']+request.POST['10thpayment_amount'])
+                                            
+                                        ,SUMother=request.POST['cgt_amount']+request.POST['dst_amount']+request.POST['transferfees_amount']+request.POST['lrafee_amount']+request.POST['itfee_amount']+request.POST['notarialfee_amount']
+                                        ,TAXother=  balance-SUMother
                                        
                                            
                                            

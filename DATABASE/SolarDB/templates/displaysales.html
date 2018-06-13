@@ -78,12 +78,12 @@
 				    	<th rowspan="2" id="tr-head">Released Payment</th>
 				    	<th rowspan="2" id="tr-head">Balance</th>
 				    	<th colspan="2" id="tr-head">BIR</th>
-				    	<th rowspan="2" id="tr-head">LGU</th>
+				    	<th rowspan="1" id="tr-head">LGU</th>
 				    	<th colspan="2" id="tr-head">ROD</th>
-				    	<th rowspan="2" id="tr-head">Others</th>
+				    	<th rowspan="1" id="tr-head">Others</th>
 				    	<th rowspan="2" id="tr-head">Sum of other expenses</th>
-				    	<th rowspan="2" id="tr-head">Taxes and other Fees</th>
-                        <th colspan="2" id="tr-head"></th>
+				    	<th rowspan="2" id="tr-head">Balance Less Taxes and Other Fees</th>
+                        
 				    </tr>
 				      
 				    <tr>
@@ -128,7 +128,7 @@
                     <td id="tr-text"> {{ property.titleNum}}</td> 
                     <td id="tr-number"> {{ property.areaHectares}}</td>
                     <td id="tr-number"> {{ property.pricePerHectare}}</td>
-                    <td id="tr-number"> </td>  
+                    <td id="tr-number">{{ property.totalContractPrice}} </td>  
                     <td id="tr-number"> {{ property.firstPayAmount}}</td>
                     <td id="tr-text"> {{ property.firstPayDate}}</td>
                     <td id="tr-number"> {{ property.secPayAmount}}</td>
@@ -159,12 +159,12 @@
                     <td id="tr-number"> {{ property.BIRdst}}</td>  
                     <td id="tr-number"> {{ property.LGUtransfer}}</td>    
                     <td id="tr-number"> {{ property.RODlra}}</td>  
-                    <td></td>
-                    <td></td>
+                    <td>{{ property.RODit}}</td>
+                    <td>{{ property.OTHERSnotorial}}</td>
                     <td id="tr-number"> {{ property.SUMother}}</td>    
                     <td id="tr-number"> {{ property.TAXother}}</td> 
-                    <td id="tr-number"> {{ property.RODit}}</td>    
-                    <td id="tr-number"> {{ property.OTHERSnotorial}}</td> 
+                       
+                    
                 </tr>
 				 {% endfor%}
                 </tbody>

@@ -14,15 +14,14 @@ class salesProperty(models.Model):
     #Property Owner's Details
     regLandOwner = models.CharField(max_length = 255, default = "")
     contactNum = models.CharField(max_length = 255, default = "")
-    Address = models.CharField(max_length = 255, default = "")
-    representative = models.CharField(max_length = 255, default = "")
+    Payee = models.CharField(max_length = 255, default = "")
     #End of Property Owner's Details
     
     #Property Details
     titleNum = models.CharField(max_length = 255, default = "")
-    lotNum = models.CharField(max_length = 255, default = "")
+    
     areaHectares = models.FloatField(default = None)
-    surveyNum = models.CharField(max_length = 255, default = "")
+    
     #End of Property Details
     
     #Payment Details
@@ -78,7 +77,7 @@ class salesProperty(models.Model):
     #End of Taxes and Registration Fees
     
     
-    Payee = models.CharField(max_length = 255, default = "")
+    
     area = models.FloatField(default = None)
     
     
