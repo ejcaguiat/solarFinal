@@ -7,17 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
     <title>Lease Properties Form</title>
-    {% if not user.is_authenticated %}
-        <title>UNAUTHORIZED</title>
-        <meta http-equiv="refresh" content="0; UNAUTHORIZED_ACCESS" />
-    {%elif loggeduser.accountType == 0 %}
-        <title>UNAUTHORIZED</title>
-        <meta http-equiv="refresh" content="0; UNAUTHORIZED_ACCESS" />
-    {% endif %}
-    
 </head>
-    
-<!------ Include the above in your HEAD tag ---------->
 
 <body>
     {% csrf_token %}
@@ -166,7 +156,6 @@
       <div class="form-group">
         <label class="col-sm-3 control-label">Advance Payment</label>
         <div class="col-sm-5">
-            
           <input type="text" class="form-control-amount" name="advancepayment_amount" id="advancepayment_amount" value = 0>
 		  <input type="text" class="form-control-date" name="advancepayment_date" id="advancepayment_date" placeholder="Date Released">
         </div>

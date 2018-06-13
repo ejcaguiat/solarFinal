@@ -166,22 +166,17 @@ h1{
 	padding-top: 8px;
 	background-color: orange;
 	height: 90px;
-	z-index: -1;
+    width: 110%;
+	z-index: 1;
+    position: fixed;
 }
+
 .topnav-logo{
 	height: 70px;
 	padding-left: 25px;
 	padding-top: 10px;
-}
-button, .topnav input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-	margin-top: 20px;
-    margin-right: 16px;
-    font-size: 17px;
-	border-style: solid;
-    border-width: 1px;
+    float: left;
+    
 }
 
 .home-logo, .login-logo{
@@ -255,7 +250,67 @@ body.home-main{
 /***** VIEW TABLE *****/
 thead{
   color: white;
-  background-color:  coral;
+  background-color: black;
+}
+
+tbody{
+  font-family: Courier;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    margin-left: 200px;
+    margin-top: 0px;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+select {
+  float: right;
+  font-size: 15px;
 }
 
 #myInput {
@@ -266,21 +321,33 @@ thead{
   font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+  float: right;
+}  
 
 #myTable {
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #ddd;
   font-size: 12px;
-  margin-right: 50px;
+  padding-right: 50px;
+  margin-top: 0;
 }
 
 #myTable th, #myTable td {
-  text-align: center;
   padding: 12px;
   border: 1px solid #000;
+}
+
+#tr-head{
+    text-align: center;
+}
+
+#tr-text{
+    text-align: left;
+}
+
+#tr-number{
+    text-align: right;
 }
 
 #myTable tr {
@@ -290,8 +357,6 @@ thead{
 #tr-hover:hover{
     background-color: #ccc;
 }
-
-
 
 #underLined {
     text-decoration: underline; 

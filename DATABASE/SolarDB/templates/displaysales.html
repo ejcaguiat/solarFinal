@@ -7,20 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
     <title>Sales Properties Summary</title>
-    {% if not user.is_authenticated %}
-        <title>UNAUTHORIZED</title>
-        <meta http-equiv="refresh" content="0; UNAUTHORIZED_ACCESS" />
-    {%endif%}
 </head> 
 
 <body>
 	<div>
-        <div class="topnav" >
-            <div class="topnav-back">
-                <a href = "/homepage"><img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
-                <p id = "underLined" style = "width: 110px;">← back to home</p></a>
-            </div>
-            
+        <div class="topnav">
+            <img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
+            <ul>
+                 <li><a href="/homepage">Home</a></li>
+                 <li class="dropdown">
+                     <a href="javascript:void(0)" class="dropbtn">Sales Properties</a>
+                     <div class="dropdown-content">
+                         <a href="#">Display</a>
+                         <a href="#">Add</a>
+                         <a href="#">Edit</a>
+                     </div>
+                 </li>
+                 <li class="dropdown">
+                     <a href="javascript:void(0)" class="dropbtn">Lease Properties</a>
+                     <div class="dropdown-content">
+                         <a href="#">Display</a>
+                         <a href="#">Add</a>
+                         <a href="#">Edit</a>
+                     </div>
+                 </li>
+            </ul>
             <select>
                 <option value="0">Payment Status</option>
                 <option value="1">Region</option>
@@ -37,41 +48,42 @@
                 <option value="12">Title Contract Price</option>
             </select> 
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+
         </div>
-        
-            <table  id="myTable">
+        <div style="margin-left: 10px; padding-top: 100px;">
+            <table id="myTable">
                 <thead>
-				    <tr>
-				    	<th rowspan="2">Payment Status (%PAID)</th>
-				    	<th rowspan="2">Region</th> 
-				    	<th rowspan="2">Province</th>
-				    	<th rowspan="2">Municipality</th>
-				    	<th rowspan="2">Barangay</th>
-				    	<th rowspan="2">Registered Landowner</th>
-				    	<th rowspan="2">Payee</th>
-				    	<th rowspan="2">Title No.</th>
-				    	<th rowspan="2">Area(hectares)</th>
-				    	<th rowspan="2">Sale Price Per Hectare</th>
-				    	<th rowspan="2">Total Contract Price</th>
-				    	<th colspan="2">1st Payment</th>
-				    	<th colspan="2">2nd Payment</th>
-				    	<th colspan="2">3rd Payment</th>
-				    	<th colspan="2">4th Payment</th>
-				    	<th colspan="2">5th Payment</th>
-				    	<th colspan="2">6th Payment</th>
-				    	<th colspan="2">7th Payment</th>
-				    	<th colspan="2">8th Payment</th>
-				    	<th colspan="2">9th Payment</th>
-				    	<th colspan="2">10th Payment</th>
-				    	<th rowspan="2">Released Payment</th>
-				    	<th rowspan="2">Balance</th>
-				    	<th colspan="2">BIR</th>
-				    	<th rowspan="1">LGU</th>
-				    	<th colspan="2">ROD</th>
-				    	<th rowspan="1">Others</th>
-				    	<th rowspan="2">Sum of other expenses</th>
-				    	<th rowspan="2">Taxes and other Fees</th>
-                      
+				    <tr style="text-align: center;">
+				    	<th rowspan="2" id="tr-head">Payment Status (%PAID)</th>
+				    	<th rowspan="2" id="tr-head">Region</th> 
+				    	<th rowspan="2" id="tr-head">Province</th>
+				    	<th rowspan="2" id="tr-head">Municipality</th>
+				    	<th rowspan="2" id="tr-head">Barangay</th>
+				    	<th rowspan="2" id="tr-head">Registered Landowner</th>
+				    	<th rowspan="2" id="tr-head">Payee</th>
+				    	<th rowspan="2" id="tr-head">Title No.</th>
+				    	<th rowspan="2" id="tr-head">Area(hectares)</th>
+				    	<th rowspan="2" id="tr-head">Sale Price Per Hectare</th>
+				    	<th rowspan="2" id="tr-head">Total Contract Price</th>
+				    	<th colspan="2" id="tr-head">1st Payment</th>
+				    	<th colspan="2" id="tr-head">2nd Payment</th>
+				    	<th colspan="2" id="tr-head">3rd Payment</th>
+				    	<th colspan="2" id="tr-head">4th Payment</th>
+				    	<th colspan="2" id="tr-head">5th Payment</th>
+				    	<th colspan="2" id="tr-head">6th Payment</th>
+				    	<th colspan="2" id="tr-head">7th Payment</th>
+				    	<th colspan="2" id="tr-head">8th Payment</th>
+				    	<th colspan="2" id="tr-head">9th Payment</th>
+				    	<th colspan="2" id="tr-head">10th Payment</th>
+				    	<th rowspan="2" id="tr-head">Released Payment</th>
+				    	<th rowspan="2" id="tr-head">Balance</th>
+				    	<th colspan="2" id="tr-head">BIR</th>
+				    	<th rowspan="2" id="tr-head">LGU</th>
+				    	<th colspan="2" id="tr-head">ROD</th>
+				    	<th rowspan="2" id="tr-head">Others</th>
+				    	<th rowspan="2" id="tr-head">Sum of other expenses</th>
+				    	<th rowspan="2" id="tr-head">Taxes and other Fees</th>
+                        <th colspan="2" id="tr-head"></th>
 				    </tr>
 				      
 				    <tr>
@@ -98,67 +110,68 @@
 				    	<th>CGT(6%)</th>
 				    	<th>DST(3%)</th>
 				    	<th>Transfer Fee(1%)</th>
-                        <th>Notorial Fee(1%)</th>
 				    	<th>LRA Fee(1%)</th>
 				    	<th>I.T Fee</th>
-				    	
+				    	<th>Notorial Fee(1%)</th>
 				    </tr>
                 </thead>
+                <tbody>
                     {% for property  in all_properties%}
                 <tr id="tr-hover">
 				    <td> </td>
-					<td> {{ property.region}}</td>
-                    <td> {{ property.province}}</td>
-                    <td> {{ property.municipality}}</td>
-                    <td> {{ property.barangay}}</td>
-                    <td> {{ property.regLandOwner}}</td>   
-                    <td> {{ property.representative}}</td>
-                    <td> {{ property.titleNum}}</td> 
-                    <td> {{ property.areaHectares}}</td>
-                    <td> {{ property.pricePerHectare}}</td>
-                    <td> {{ property.totalContractPrice}}  </td>  
-                    <td> {{ property.firstPayAmount}}</td>
-                    <td> {{ property.firstPayDate}}</td>
-                    <td> {{ property.secPayAmount}}</td>
-                    <td> {{ property.secPayDate}}</td>
-                    <td> {{ property.thirdPayAmount}}</td>
-                    <td> {{ property.thirdPayDate}}</td>
-                    <td> {{ property.fourthPayAmount}}</td>
-                    <td> {{ property.fourthPayDate}}</td>
-                    <td> {{ property.fifthPayAmount}}</td>
-                    <td> {{ property.fifthPayDate}}</td>
+					<td id="tr-text"> {{ property.region}}</td>
+                    <td id="tr-text"> {{ property.province}}</td>
+                    <td id="tr-text"> {{ property.municipality}}</td>
+                    <td id="tr-text"> {{ property.barangay}}</td>
+                    <td id="tr-text"> {{ property.regLandOwner}}</td>   
+                    <td id="tr-text"> {{ property.Payee}}</td>
+                    <td id="tr-text"> {{ property.titleNum}}</td> 
+                    <td id="tr-number"> {{ property.areaHectares}}</td>
+                    <td id="tr-number"> {{ property.pricePerHectare}}</td>
+                    <td id="tr-number"> </td>  
+                    <td id="tr-number"> {{ property.firstPayAmount}}</td>
+                    <td id="tr-text"> {{ property.firstPayDate}}</td>
+                    <td id="tr-number"> {{ property.secPayAmount}}</td>
+                    <td id="tr-text"> {{ property.secPayDate}}</td>
+                    <td id="tr-number"> {{ property.thirdPayAmount}}</td>
+                    <td id="tr-text"> {{ property.thirdPayDate}}</td>
+                    <td id="tr-number"> {{ property.fourthPayAmount}}</td>
+                    <td id="tr-text"> {{ property.fourthPayDate}}</td>
+                    <td id="tr-number"> {{ property.fifthPayAmount}}</td>
+                    <td id="tr-text"> {{ property.fifthPayDate}}</td>
                          
-                    <td> {{ property.sixthPayAmount}}</td>
-                    <td> {{ property.sixthPayDate}}</td>
-                    <td> {{ property.seventhPayAmount}}</td>
-                    <td> {{ property.seventhPayDate}}</td>
+                    <td id="tr-number"> {{ property.sixthPayAmount}}</td>
+                    <td id="tr-text"> {{ property.sixthPayDate}}</td>
+                    <td id="tr-number"> {{ property.seventhPayAmount}}</td>
+                    <td id="tr-text"> {{ property.seventhPayDate}}</td>
     
-                    <td> {{ property.eigthPayAmount}}</td>
-                    <td> {{ property.eigthPayDate}}</td>
-                    <td> {{ property.ninthPayAmount}}</td>
-                    <td> {{ property.ninthPayDate}}</td>
-                    <td> {{ property.tenthPayAmount}}</td>
-                    <td> {{ property.tenthPayDate}}</td>    
+                    <td id="tr-number"> {{ property.eigthPayAmount}}</td>
+                    <td id="tr-text"> {{ property.eigthPayDate}}</td>
+                    <td id="tr-number"> {{ property.ninthPayAmount}}</td>
+                    <td id="tr-text"> {{ property.ninthPayDate}}</td>
+                    <td id="tr-number"> {{ property.tenthPayAmount}}</td>
+                    <td id="tr-text"> {{ property.tenthPayDate}}</td>    
                          
-                    <td> {{ property.releasedPayment}}</td>    
-                    <td> {{ property.balance}}</td>    
+                    <td id="tr-number"> {{ property.releasedPayment}}</td>    
+                    <td id="tr-number"> {{ property.balance}}</td>    
                     
-                    <td> {{ property.BIRcgt}}</td>    
-                    <td> {{ property.BIRdst}}</td>  
-                    <td> {{ property.LGUtransfer}}</td>   
-                    <td> {{ property.OTHERSnotorial}}</td> 
-                    <td> {{ property.RODlra}}</td>  
-                    
-                  
-                    <td> {{ property.SUMother}}</td>    
-                    <td> {{ property.TAXother}}</td> 
-                    <td> {{ property.RODit}}</td>    
-                    
+                    <td id="tr-number"> {{ property.BIRcgt}}</td>    
+                    <td id="tr-number"> {{ property.BIRdst}}</td>  
+                    <td id="tr-number"> {{ property.LGUtransfer}}</td>    
+                    <td id="tr-number"> {{ property.RODlra}}</td>  
+                    <td></td>
+                    <td></td>
+                    <td id="tr-number"> {{ property.SUMother}}</td>    
+                    <td id="tr-number"> {{ property.TAXother}}</td> 
+                    <td id="tr-number"> {{ property.RODit}}</td>    
+                    <td id="tr-number"> {{ property.OTHERSnotorial}}</td> 
                 </tr>
 				 {% endfor%}
+                </tbody>
 				  				  
             </table>
         </div>
+    </div>
 </body>
 
        

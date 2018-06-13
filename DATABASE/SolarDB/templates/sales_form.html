@@ -6,11 +6,6 @@
 	<link href="{% static 'css/stylecss.css' %}" rel="stylesheet" >
 	<link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
 	<title>Sales Property Form</title>
-    {%if loggeduser.accountType == 0 %}
-        <title>UNAUTHORIZED</title>
-        <meta http-equiv="refresh" content="0; UNAUTHORIZED_ACCESS" />
-    {% endif %}
-    
 </head>
 <!------ Include the above in your HEAD tag ---------->
 
