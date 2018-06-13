@@ -98,12 +98,12 @@ class leaseProperty(models.Model):
     regLandOwner = models.CharField(max_length = 255, default = "")
     contactNum = models.CharField(max_length = 255, default = "")
     Address = models.CharField(max_length = 255, default = "")
-    representative = models.CharField(max_length = 255, default = "")
+   
     #End of Property Owner's Details
     
      #Payment Details
     pricePerHectare = models.FloatField(default = None)
-    totalContractPrice = models.FloatField(default = None)
+    
     numofyear = models.FloatField(default = None)
     #End of Payment Details
     
