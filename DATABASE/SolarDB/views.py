@@ -322,6 +322,8 @@ def salesedit(request):
     }
     return render(request, 'editsales-admin.html', context)
 
+def editSform(request):
+    return render(request, 'edit_sales_form.html')
 
 
 
