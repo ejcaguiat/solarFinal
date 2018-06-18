@@ -155,8 +155,32 @@ def leaseregister(request):
                                 , year30Pay=request.POST['year30Pay']
                                            , year30Date=request.POST['year30Date']
                                 
+                                ,year5sum= float(request.POST['year1Pay'])+ float(request.POST['year2Pay'])+ float(request.POST['year3Pay'])+float(request.POST['year4Pay'])+float(request.POST['year5Pay'])
                                 
-                                            
+                                ,year10sum= float(request.POST['year6Pay'])+ float(request.POST['year7Pay'])+ float(request.POST['year8Pay'])+float(request.POST['year9Pay'])+float(request.POST['year10Pay'])
+                                
+                                ,year15sum= float(request.POST['year11Pay'])+ float(request.POST['year12Pay'])+ float(request.POST['year13Pay'])+float(request.POST['year14Pay'])+float(request.POST['year15Pay'])
+                                
+                                ,year20sum= float(request.POST['year16Pay'])+ float(request.POST['year17Pay'])+ float(request.POST['year18Pay'])+float(request.POST['year19Pay'])+float(request.POST['year20Pay'])
+                                
+                                ,year25sum= float(request.POST['year21Pay'])+ float(request.POST['year22Pay'])+ float(request.POST['year23Pay'])+float(request.POST['year24Pay'])+float(request.POST['year25Pay'])
+                                
+                                ,year30sum= float(request.POST['year26Pay'])+ float(request.POST['year27Pay'])+ float(request.POST['year28Pay'])+float(request.POST['year29Pay'])+float(request.POST['year30Pay'])
+                                
+                                
+                                ,yeartotal=float(request.POST['year1Pay'])+ float(request.POST['year2Pay'])+ float(request.POST['year3Pay'])+float(request.POST['year4Pay'])+float(request.POST['year5Pay'])+
+                                float(request.POST['year6Pay'])+ float(request.POST['year7Pay'])+ float(request.POST['year8Pay'])+float(request.POST['year9Pay'])+float(request.POST['year10Pay'])+
+                                float(request.POST['year11Pay'])+ float(request.POST['year12Pay'])+ float(request.POST['year13Pay'])+float(request.POST['year14Pay'])+float(request.POST['year15Pay'])+
+                                float(request.POST['year16Pay'])+ float(request.POST['year17Pay'])+ float(request.POST['year18Pay'])+float(request.POST['year19Pay'])+float(request.POST['year20Pay'])+
+                                float(request.POST['year21Pay'])+ float(request.POST['year22Pay'])+ float(request.POST['year23Pay'])+float(request.POST['year24Pay'])+float(request.POST['year25Pay'])+
+                                float(request.POST['year26Pay'])+ float(request.POST['year27Pay'])+ float(request.POST['year28Pay'])+float(request.POST['year29Pay'])+float(request.POST['year30Pay'])
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                                              , BIRcgt=request.POST['cgt_amount']
                                            
                                            
@@ -175,11 +199,11 @@ def leaseregister(request):
                                        
                                         
                                         , area =request.POST['area']
+                                        ,balance=000
                                 
-                                #not used
-                                        , SUMother =0000
-                                , TAXother =0000
-                                ,dateRelease= "1111-11-11"
+                                        
+                               
+                                
 
     
                            )
