@@ -7,16 +7,30 @@
 	<link rel="icon" type="image/png" href="{% static 'media/solar-titlebar.png' %}" />
 	<title>Sales Property Form</title>
 </head>
-<!------ Include the above in your HEAD tag ---------->
 
 <body>
      {% csrf_token %}
-		<div class="topnav">
-            <a href = "/homepage"><img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
-            <br>
-                <p id = "underLined">← back to home</p></a>
-		</div>
-<div class="container">
+		<div class="navbar" style="background-image: url({% static 'media/orange-bg.png' %});">
+        <img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
+        <a href="/homepage">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Lease Properties
+          </button>
+          <div class="dropdown-content">
+            <a href="/homepage/leaseview">Display</a>
+            <a href="/homepage/leaseedit">Edit/Delete</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Sales Properties
+          </button>
+          <div class="dropdown-content">
+            <a href="/homepage/salesview">Display</a>
+            <a href="/homepage/salesedit">Edit/Delete</a>
+          </div>
+        </div>
+    </div>
+<div class="container" style="padding-top: 80px;">
   <h1>Sale Properties</h1>
   <form class="form-horizontal" role="form" action="#" method="POST">
     <fieldset>
@@ -60,13 +74,25 @@
       </div>
 	  
       <div class="form-group">
-        <label class="col-sm-3 control-label">Payee</label>
+        <label class="col-sm-3 control-label">Representative</label>
         <div class="col-sm-5">
-          <input type="text" class="form-control" name="payee" id="representative" placeholder="Payee">
+          <input type="text" class="form-control" name="representative" id="representative" placeholder="Representative">
         </div>
       </div>
       
-	  
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Address</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" name="address" id="address" placeholder="Address">
+        </div>
+      </div>
+      
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">Contact Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="contactnumber" id="contactnumber" placeholder="Contact Number">
+        </div>
+      </div>
     </fieldset>
 	
 	<fieldset>
@@ -78,7 +104,12 @@
         </div>
       </div>
 	  
-      
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Lot Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="lotnumber" id="lotnumber" placeholder="Lot Number">
+        </div>
+      </div>
       
       <div class="form-group">
         <label class="col-sm-3 control-label">Area (Hectares)</label>
@@ -87,7 +118,12 @@
         </div>
       </div>
       
-	 
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">Survey Number</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" name="surveynumber" id="surveynumber" placeholder="Survey Number">
+        </div>
+      </div>
     </fieldset>
 	
 	<fieldset>
@@ -220,7 +256,13 @@
 		 
         </div>
       </div>
-	 
+	  <div class="form-group">
+        <label class="col-sm-3 control-label">LBP</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control-amount" name="lbp_amount" id="y21-lbp_amount" value = 0>
+		 
+        </div>
+      </div>
 	  <div class="form-group">
         <label class="col-sm-3 control-label">Notarial Fee</label>
         <div class="col-sm-3">

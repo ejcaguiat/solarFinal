@@ -1,4 +1,4 @@
-{% load static %}
+<!--{% load static %}-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,47 +10,45 @@
 </head> 
 
 <body>
-	<div>
-        <div class="topnav">
-            <img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
-            <ul>
-                 <li><a href="/homepage">Home</a></li>
-                 <li class="dropdown">
-                     <a href="javascript:void(0)" class="dropbtn">Sales Properties</a>
-                     <div class="dropdown-content">
-                         <a href="#">Display</a>
-                         <a href="#">Add</a>
-                         <a href="#">Edit</a>
-                     </div>
-                 </li>
-                 <li class="dropdown">
-                     <a href="javascript:void(0)" class="dropbtn">Lease Properties</a>
-                     <div class="dropdown-content">
-                         <a href="#">Display</a>
-                         <a href="#">Add</a>
-                         <a href="#">Edit</a>
-                     </div>
-                 </li>
-            </ul>
-            <select>
-                <option value="0">Payment Status</option>
-                <option value="1">Region</option>
-                <option value="2">Province</option>
-                <option value="3">Municipality</option>
-                <option value="4">Barangay</option>
-                <option value="5">Registered Landowner</option>
-                <option value="6">Payee</option>
-                <option value="7">Address</option>
-                <option value="8">Contact Number</option>
-                <option value="9">Tilte No.</option>
-                <option value="10">Area</option>
-                <option value="11">Sale Price Per Hectare</option>
-                <option value="12">Title Contract Price</option>
-            </select> 
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
-
+    <div class="navbar" style="background-image: url({% static 'media/orange-bg.png' %});">
+        <img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
+        <a href="/homepage">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Lease Properties
+          </button>
+          <div class="dropdown-content">
+            <a href="/homepage/leaseregister">Add</a>
+            <a href="/homepage/leaseedit">Edit/Delete</a>
+          </div>
         </div>
-        <div style="margin-left: 10px; padding-top: 100px;">
+        <div class="dropdown">
+          <button class="dropbtn">Sales Properties
+          </button>
+          <div class="dropdown-content">
+            <a href="/homepage/salesform">Add</a>
+            <a href="/homepage/salesedit">Edit/Delete</a>
+          </div>
+        </div>
+        <div>
+            <select>
+               <option value="0">Payment Status</option>
+               <option value="1">Region</option>
+               <option value="2">Province</option>
+               <option value="3">Municipality</option>
+               <option value="4">Barangay</option>
+               <option value="5">Registered Landowner</option>
+               <option value="6">Payee</option>
+               <option value="7">Title No.</option>
+               <option value="8">Area</option>
+               <option value="9">Sale Price per Hectare</option>
+               <option value="10">Title Contract Price</option>
+            </select>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search" style="background-image: url({% static 'media/search.png' %});">
+        </div>
+    </div>
+    
+            
+        <div style="margin-left: 10px; padding-top: 80px;">
             <table id="myTable">
                 <thead>
 				    <tr style="text-align: center;">
@@ -78,12 +76,12 @@
 				    	<th rowspan="2" id="tr-head">Released Payment</th>
 				    	<th rowspan="2" id="tr-head">Balance</th>
 				    	<th colspan="2" id="tr-head">BIR</th>
-				    	<th rowspan="1" id="tr-head">LGU</th>
+				    	<th rowspan="2" id="tr-head">LGU</th>
 				    	<th colspan="2" id="tr-head">ROD</th>
-				    	<th rowspan="1" id="tr-head">Others</th>
+				    	<th rowspan="2" id="tr-head">Others</th>
 				    	<th rowspan="2" id="tr-head">Sum of other expenses</th>
-				    	<th rowspan="2" id="tr-head">Balance Less Taxes and Other Fees</th>
-                        
+				    	<th rowspan="2" id="tr-head">Taxes and other Fees</th>
+                        <th colspan="2" id="tr-head"></th>
 				    </tr>
 				      
 				    <tr>
@@ -128,7 +126,7 @@
                     <td id="tr-text"> {{ property.titleNum}}</td> 
                     <td id="tr-number"> {{ property.areaHectares}}</td>
                     <td id="tr-number"> {{ property.pricePerHectare}}</td>
-                    <td id="tr-number">{{ property.totalContractPrice}} </td>  
+                    <td id="tr-number"> </td>  
                     <td id="tr-number"> {{ property.firstPayAmount}}</td>
                     <td id="tr-text"> {{ property.firstPayDate}}</td>
                     <td id="tr-number"> {{ property.secPayAmount}}</td>
@@ -159,19 +157,18 @@
                     <td id="tr-number"> {{ property.BIRdst}}</td>  
                     <td id="tr-number"> {{ property.LGUtransfer}}</td>    
                     <td id="tr-number"> {{ property.RODlra}}</td>  
-                    <td>{{ property.RODit}}</td>
-                    <td>{{ property.OTHERSnotorial}}</td>
+                    <td></td>
+                    <td></td>
                     <td id="tr-number"> {{ property.SUMother}}</td>    
                     <td id="tr-number"> {{ property.TAXother}}</td> 
-                       
-                    
+                    <td id="tr-number"> {{ property.RODit}}</td>    
+                    <td id="tr-number"> {{ property.OTHERSnotorial}}</td> 
                 </tr>
 				 {% endfor%}
                 </tbody>
 				  				  
             </table>
         </div>
-    </div>
 </body>
 
        
@@ -197,4 +194,5 @@
         }
     }
 </script>
+
 </html>

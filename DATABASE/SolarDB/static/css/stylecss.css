@@ -156,29 +156,6 @@ h1{
 	transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s
 }
 
-.topnav{
-	margin-right: -7.5px;
-    margin-left: -10px;
-	margin-top: -8px;
-	margin-bottom: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-	padding-top: 8px;
-	background-color: orange;
-	height: 90px;
-    width: 110%;
-	z-index: 1;
-    position: fixed;
-}
-
-.topnav-logo{
-	height: 70px;
-	padding-left: 25px;
-	padding-top: 10px;
-    float: left;
-    
-}
-
 .home-logo, .login-logo{
 	text-align: center;
 	height: 100px;
@@ -250,78 +227,32 @@ body.home-main{
 /***** VIEW TABLE *****/
 thead{
   color: white;
-  background-color: black;
+  background-color: coral;
 }
 
 tbody{
   font-family: Courier;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    margin-left: 200px;
-    margin-top: 0px;
-}
-
-li {
-    float: left;
-}
-
-li a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-}
-
-li.dropdown {
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 select {
-  float: right;
-  font-size: 15px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 50px;
+    font-size: 15px;
 }
 
 #myInput {
-  background-image: url('/css/searchicon.png'); /*** not functioning ***/
-  background-position: 10px 10px;
+  background-size: 25px; 
+  background-position: 5px 3px; 
   background-repeat: no-repeat;
   width: 250px;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  font-size: 15px;
+  padding: 5px 20px 5px 40px;
   border: 1px solid #ddd;
   float: right;
+  margin-top: 10px;
+  margin-right: 25px;
+    border-radius: 2px;
 }  
 
 #myTable {
@@ -358,10 +289,69 @@ select {
     background-color: #ccc;
 }
 
-#underLined {
-    text-decoration: underline; 
+/***** TOP NAV *****/
+.topnav-logo {
+    padding-top: 5px;
+    padding-left: 10px;
+    height: 45px;
+    float: left;
+}
+
+.navbar {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 50px;
+    margin-left: -2px;
+    position: fixed;
+    width: 1370px;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
     color: black;
-    position: relative;
-    left:72.5px;
-    top: -10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom-color: blue;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

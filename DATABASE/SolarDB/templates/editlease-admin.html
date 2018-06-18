@@ -11,30 +11,45 @@
 </head> 
     
 <body>
-<div>
-   <div class="topnav">
-            <div class="topnav-back">
-                <a href = "/homepage"><img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
-                <p id = "underLined">← back to home</p></a>
-            </div>
-            
-            <select>
-                <option value="1">Payment Status</option>
-                <option value="2">Region</option>
-                <option value="3">Province</option>
-                <option value="4">Municipality</option>
-                <option value="5">Barangay</option>
-                <option value="6">Registered Landowner</option>
-                <option value="7">Payee</option>
-                <option value="8">Address</option>
-                <option value="9">Contact Number</option>
-                <option value="10">Tilte No.</option>
-                <option value="11">Area</option>
-                <option value="12">Sale Price Per Hectare</option>
-                <option value="13">Title Contract Price</option>
-            </select>  
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search">
-        </div>         
+   <div class="navbar" style="background-image: url({% static 'media/orange-bg.png' %});">
+        <img src="{% static 'media/solarpic.png' %}" class="topnav-logo">
+        <a href="/homepage">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Lease Properties
+          </button>
+          <div class="dropdown-content">
+            <a href="/homepage/leaseregister">Add</a>
+            <a href="/homepage/leaseview">Display</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Sales Properties
+          </button>
+          <div class="dropdown-content">
+            <a href="/homepage/salesform">Add</a>
+            <a href="/homepage/salesview">Display</a>
+          </div>
+        </div>
+        <div>
+             <select>
+                  <option value="0">Region</option>
+                  <option value="1">Province</option>
+                  <option value="2">Municipality</option>
+                  <option value="3">Barangay</option>
+                  <option value="4">Registered Landowner</option>
+                  <option value="5">Payee</option>
+                  <option value="6">Address</option>
+                  <option value="7">Contact Number</option>
+                  <option value="8">Title No.r</option>
+                  <option value="9">Tax Declaration</option>
+                  <option value="10">Lot No./Survey No.</option>
+                  <option value="11">Lease Price per Hectare</option>
+                  <option value="12">Number of Years</option>
+             </select>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search" style="background-image: url({% static 'media/search.png' %});">
+        </div>
+    </div>
+    <div style="margin-left: 10px; padding-top: 80px;">
             <table id="myTable">
                 <thead>
                     <tr>
@@ -304,8 +319,7 @@
 
                 {% endfor%}
             </table>
-            
-    </div>
+       </div>
 </body>
     
 <script>
